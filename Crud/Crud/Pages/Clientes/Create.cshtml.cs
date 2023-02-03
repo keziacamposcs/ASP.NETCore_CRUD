@@ -26,7 +26,7 @@ namespace Crud.Pages.Clientes
 
             if (clientInfo.nome.Length == 0)
             {
-                errorMessage = "Todos os campos s„o requeridos";
+                errorMessage = "Todos os campos s√£o requeridos";
                 return;
             }
 
@@ -41,9 +41,9 @@ namespace Crud.Pages.Clientes
                     using(SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@nome", clientInfo.nome);
-                        command.Parameters.AddWithValue("@email", clientInfo.nome);
-                        command.Parameters.AddWithValue("@telefone", clientInfo.nome);
-                        command.Parameters.AddWithValue("@endereco", clientInfo.nome);
+                        command.Parameters.AddWithValue("@email", clientInfo.email);
+                        command.Parameters.AddWithValue("@telefone", clientInfo.telefone);
+                        command.Parameters.AddWithValue("@endereco", clientInfo.endereco);
                         
                         command.ExecuteNonQuery();
 
