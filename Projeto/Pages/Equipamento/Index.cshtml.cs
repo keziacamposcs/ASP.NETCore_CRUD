@@ -12,7 +12,7 @@ namespace Projeto.Pages.Equipamento
         {
             try
             {
-                String conexao = "Data Source=(localdb)\\local;Initial Catalog=CRUD;Integrated Security=True";
+                String conexao = "Data Source=localhost;Initial Catalog=CRUD;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(conexao))
                 {
                     connection.Open();

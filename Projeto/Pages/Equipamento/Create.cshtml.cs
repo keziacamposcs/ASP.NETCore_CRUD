@@ -29,11 +29,11 @@ namespace Projeto.Pages.Equipamento
 
             try
             {
-                String conexao = "Data Source=(localdb)\\local;Initial Catalog=CRUD;Integrated Security=True";
+                String conexao = "Data Source=localhost;Initial Catalog=CRUD;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(conexao))
                 {
                     connection.Open();
-                    String sql = "SET NUMERIC_ROUNDABORT OFF;INSERT INTO equipamento (nome, num_serie) VALUES (@nome, @num_serie)";
+                    String sql = "INSERT INTO equipamento (nome, num_serie) VALUES (@nome, @num_serie)";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@nome", equip.nome);
