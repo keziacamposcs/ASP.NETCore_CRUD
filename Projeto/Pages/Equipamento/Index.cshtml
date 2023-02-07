@@ -1,0 +1,35 @@
+﻿@page
+@model Projeto.Pages.Equipamento.IndexModel
+@{
+}
+
+<br>
+<h2> Lista de Equipamentos </h2>
+
+<a class="btn btn-primary" href="/Equipamento/Create"> Novo Equipamento </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Num Série</th>
+            
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.equipamentos)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nome</td>
+                <td>@item.num_serie</td>
+                <td>
+                    <a class="btn btn-primary" href="/Equipamento/Edit?id=@item.id">Editar</a>
+                    <a class="btn btn-danger" href="/Equipamento/Delete?id=@item.id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
