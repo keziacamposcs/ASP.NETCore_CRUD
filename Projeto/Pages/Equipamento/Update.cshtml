@@ -1,0 +1,67 @@
+﻿@page
+@model Projeto.Pages.Equipamento.UpdateModel
+@{
+}
+
+
+<br>
+
+<h2>Atualização do Equipamento</h2>
+
+<!-- Mensagem de erro-->
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-primary" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<!-- Fim - Mensagem de erro-->
+
+
+<form method="POST">
+
+    <!-- ID do Equipamento para atualizar-->
+    <input type="hidden" name="id" value="@Model.equip.id" />
+
+    <!-- Fim - ID do Equipamento para atualizar-->
+
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nome" value="@Model.equip.nome" />
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Num Série</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="num_serie" value="@Model.equip.num_serie" />
+        </div>
+    </div>
+
+    <!-- Mensagem de sucesso -->
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <!-- Fim - Mensagem de sucesso-->
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-4 d-grid">
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancelar</a>
+        </div>
+    </div>
+
+</form>

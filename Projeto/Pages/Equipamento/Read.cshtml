@@ -1,0 +1,56 @@
+﻿@page
+@model Projeto.Pages.Equipamento.ReadModel
+@{
+}
+
+<br>
+
+<h2>Detalhes do Equipamento</h2>
+
+<!-- Mensagem de erro-->
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-primary" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<!-- Fim - Mensagem de erro-->
+
+
+<form method="POST">
+
+    <!-- ID do Equipamento para atualizar-->
+    <input type="hidden" name="id" value="@Model.equip.id" />
+    <!-- Fim - ID do Equipamento para atualizar-->
+
+
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nome" value="@Model.equip.nome" readonly/>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Num Série</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="num_serie" value="@Model.equip.num_serie" readonly />
+        </div>
+    </div>
+
+    <!-- Mensagem de sucesso -->
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <!-- Fim - Mensagem de sucesso-->
+
+</form>
