@@ -21,7 +21,8 @@ namespace Projeto.Pages.Equipamento
             try
             {
                 //Propriedades para conectar ao Banco de dados
-                String conexao = "Data Source=localhost;Initial Catalog=CRUD;Integrated Security=True";
+                //String conexao = "Data Source=localhost;Initial Catalog=CRUD;Integrated Security=True";
+                String conexao = "Data Source=DOF-FQ0KWT3\\SQLEXPRESS;Initial Catalog=CRUD;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(conexao))
                 {
                     connection.Open();
